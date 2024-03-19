@@ -1,0 +1,14 @@
+#header {
+  background-color: #8a1538;
+  color: white;
+  padding: 12px;
+}
+
+.nav-link {
+  color: white;
+}
+
+table {
+  position: relative;
+  margin: 40px;
+}
