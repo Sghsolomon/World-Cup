@@ -12,3 +12,17 @@ table {
   position: relative;
   margin: 40px;
 }
+
+body {
+  background-image: url('image/image2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h3 {
+  display: inline;
+}
+
+h3.float-right {
+  margin-left: 400px;
+}
