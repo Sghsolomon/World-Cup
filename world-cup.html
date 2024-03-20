@@ -21,13 +21,14 @@
           <a class="navbar-brand nav-link" href="#">MATCHES</a>
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link" href="#fat">PLAYERS</a>
+              <a class="nav-link" href="players.html">PLAYERS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#mdo">NEWS</a>
             </li>
-            <select class="nav-link dropdown-toggle">
+            <select class="nav-link dropdown-toggle" onclick="showPage()">
               <option>SELECT WORLD CUP YEAR</option>
+              <!-- these will have onclicks to fetch data from that year? -->
               <option>YEAR 2002</option>
               <option>YEAR 2006</option>
               <option>YEAR 2010</option>
@@ -45,33 +46,73 @@
       </div>
     </header>
     <!--Main-->
-    <main>
-      <div>
-        <table class="table">
+    <main style="display: none;">
+      <div class="container p-3 ms-1">
+        <div class="row mb-2 finals">
+          <table class="col-6 p-3 border border-start-0"  >
+            <thead>
+                <th scope="col">Final</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="col-1" scope="col">Team Flag</th>
+                <td class="col-2">Team Country</td>
+                <td class="col-2 align-self-end">score</td>
+              </tr>
+              <tr>
+                <th class="col-3" scope="col">Team Flag</th>
+                <td class="col-3">Team Country</td>
+                <td class="col-2 align-self-end">score</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="row semi-finals">
+        <table class="col-6 p-3 border border-start-0" >
           <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
+              <th scope="col">Semi Final</th>
           </thead>
           <tbody>
-            <tr>
-              <td>Final</td>
-              <td>Final</td>
+            <tr class='container'>
+              <td class="col-2"><img class='flags' src="images/Flag_of_Italy_.png" alt="flag"></td>
+              <td class="col-2">Team Country</td>
+              <td class="col-1">score</td>
             </tr>
-            <tr>
-              <td>Semi-final</td>
-              <td>Semi-final</td>
-            </tr>
-            <tr>
-              <td>Querter-finals</td>
-              <td>Querter-finals</td>
+            <tr class='container'>
+              <th class="col-2" scope="col">Team Flag</th>
+              <td class="col-2">Team Country</td>
+              <td class="col-1 align-self-end">score</td>
             </tr>
           </tbody>
         </table>
-      </div>
+      
+      
+        <table class="col-6 p-3 border border-end-0"  >
+          <thead>
+              <th scope="col">Semi Final</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="col-1" scope="col">Team Flag</th>
+              <td class="col-2">Team Country</td>
+              <td class="col-2 text-end">score</td>
+            </tr>
+            <tr>
+              <th class="col-3" scope="col">Team Flag</th>
+              <td class="col-3">Team Country</td>
+              <td class="col-2 text-end">score</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
     </main>
 
+    <script>
+      function showPage () {
+        let main = document.querySelector('main');
+        main.style.display = 'block';
+      }
+    </script>
     <!--Footer-->
   </body>
 </html>
