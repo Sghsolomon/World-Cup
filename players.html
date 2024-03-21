@@ -10,41 +10,54 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./world-cup.css" />
-    <title>world Cup</title>
+    <title>World Cup</title>
   </head>
   <body>
     <!--Header-->
     <header>
-      <div id="header" class="col-12">
-        <h1>2002 - 2022 WORLD CUP</h1>
-        <nav id="navbar-example2" class="navbar bg">
-          <a class="navbar-brand nav-link active" href="world-cup.html">MATCHES</a>
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">PLAYERS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#mdo">NEWS</a>
-            </li>
-            <select class="nav-link dropdown-toggle">
-              <option>SELECT WORLD CUP YEAR</option>
-              <!-- these will have onclicks to fetch data from that year? -->
-              <option>YEAR 2002</option>
-              <option>YEAR 2006</option>
-              <option>YEAR 2010</option>
-              <option>YEAR 2014</option>
-              <option>YEAR 2018</option>
-              <option>YEAR 2022</option>
-            </select>
-          </ul>
-        </nav>
-        <div
-          data-spy="scroll"
-          data-target="#navbar-example2"
-          data-offset="0"
-        ></div>
-      </div>
+        <div id="header" class="col-12">
+          
+          <div class="row">
+              <h3 class="col-6">2012 - 2022 WORLD CUP</h3>
+              <h3 class="col-6 align-self-end">SELECT YEAR FOR MORE INFORMATION</h3>
+          </div>
+           <div class="row"> 
+              <div class="col-6"><a href="main.html" active>Home</a></div>
+              <div class="col-6">
+                  <div class="dropdown ">
+                      <button
+                          class="btn btn-primary dropdown-toggle"
+                          type="button"
+                          id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                      >
+                          WORLD-CUP YEAR
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li>
+                              <a class="dropdown-item" href="world-cup.html">2014</a>
+                          </li>
+                          <li>
+                          <a class="dropdown-item" href="world-cup.html">2018</a>
+                          </li>
+                          <li>
+                          <a class="dropdown-item" href="world-cup.html">2022</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div> 
+        </div>
     </header>
+
+    <main>
+        <h1>Player Roster </h1>
+        <ul>{Country Name}
+            <li>List players once we get data</li>
+        </ul>
+    </main>
+   
 
     
 </body>
