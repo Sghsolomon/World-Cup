@@ -14,6 +14,7 @@ table {
   padding: 0 50px 0 50px;
   border-collapse: separate;
 }
+<<<<<<< HEAD
 #finalsTable {
   background-color: rgb(228, 228, 228) ;
 }
@@ -38,6 +39,11 @@ body{
 
 .mainPage {
   background-image: url('images/image2.jpg');
+=======
+
+body {
+  background-image: url('image/image2.jpg');
+>>>>>>> main
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -48,4 +54,8 @@ h3 {
 
 h3.float-right {
   margin-left: 400px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
