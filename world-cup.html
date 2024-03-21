@@ -18,7 +18,7 @@
       <div id="header" class="col-12">
         
         <div class="row">
-            <h3 class="col-6">2012 - 2022 WORLD CUP</h3>
+            <h3 class="col-6">2014 - 2022 WORLD CUP</h3>
             <h3 class="col-6 align-self-end">SELECT YEAR FOR MORE INFORMATION</h3>
         </div>
          <div class="row"> 
@@ -76,27 +76,27 @@
       <div class="container p-3 ms-1">
 
         <div class="row mb-2 finals" id="finalsTable" style="display: none">
-          <table class="col-6 p-3 border border-start-0">
+          <table class="col-10 p-3 border border-start-0">
             <thead>
                 <th scope="col">Final</th>
             </thead>
             <tbody>
               <tr>
-                <th class="col-1" scope="col"><a href="players.html"></a>Team Flag</th>
-                <td class="col-2">Team Country</td>
-                <td class="col-2 align-self-end">score</td>
+                <th scope="col"><a href="players.html"></a>Team Flag</th>
+                <td >Team Country</td>
+                <td >score</td>
               </tr>
               <tr>
-                <th class="col-3" scope="col">Team Flag</th>
-                <td class="col-3">Team Country</td>
-                <td class="col-2 align-self-end">score</td>
+                <th scope="col">Team Flag</th>
+                <td>Team Country</td>
+                <td>score</td>
               </tr>
             </tbody>
           </table>
         </div>
 
       <div class="row semi-finals" id='semisTable' style="display: none">
-        <table class="col-6 p-3 border border-start-0" >
+        <table class="col-8 p-3 border border-end-0" >
           <thead>
               <th scope="col">Semi Final</th>
           </thead>
@@ -114,40 +114,40 @@
           </tbody>
         </table>
       
-        <table class="col-6 p-3 border border-end-0"  >
+        <table class="col-8 p-3 border border-end-0"  >
           <thead>
               <th scope="col">Semi Final</th>
           </thead>
           <tbody>
             <tr>
-              <th class="col-1" scope="col">Team Flag</th>
-              <td class="col-2">Team Country</td>
-              <td class="col-2 text-end">score</td>
+              <th  scope="col">Team Flag</th>
+              <td >Team Country</td>
+              <td >score</td>
             </tr>
             <tr>
-              <th class="col-3" scope="col">Team Flag</th>
-              <td class="col-3">Team Country</td>
-              <td class="col-2 text-end">score</td>
+              <th scope="col">Team Flag</th>
+              <td>Team Country</td>
+              <td>score</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="row quarter-finals" id='quartersTable' style="display: none">
-        <table class="col-6 p-3 border border-start-0" >
+        <table class="col-6 p-3 border border-end-0" >
           <thead>
               <th scope="col">Quarter Final</th>
           </thead>
           <tbody>
-            <tr class='container'>
-              <td class="col-2"><a href="players.html"><img class='flags' src="images/Flag_of_Italy_.png" alt="flag"></a></td>
-              <td class="col-2">Team Country</td>
-              <td class="col-1">score</td>
+            <tr >
+              <td ><a href="players.html"><img class='flags' src="images/Flag_of_Italy_.png" alt="flag"></a></td>
+              <td >Team Country</td>
+              <td >score</td>
             </tr>
-            <tr class='container'>
-              <th class="col-2" scope="col">Team Flag</th>
-              <td class="col-2">Team Country</td>
-              <td class="col-1 align-self-end">score</td>
+            <tr>
+              <th scope="col">Team Flag</th>
+              <td >Team Country</td>
+              <td >score</td>
             </tr>
           </tbody>
         </table>
@@ -210,21 +210,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-      let roundSelector = document.querySelector('#roundDropdown')
-      
-      roundSelector.addEventListener('click', showSection)
-      
-      function showSection (e) {
-        let round = e.target.id
-        console.log(round) 
-        let table = document.querySelector(`#${round}Table`)
-        console.log(table)
-        table.style.display = 'block';
-      }
-
-      
-    </script>
+    <script src="js/script.js"></script>
     <!--Footer-->
   </body>
 </html>
