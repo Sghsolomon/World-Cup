@@ -21,7 +21,18 @@ async function buildTable() {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
+    const table = document.querySelector('#myTable');
+
+    for (let element of result) {
+      let row = `<tr>
+      <td>${element['event_year']}</td>
+      <td>${element['event_locaiton']}</td>
+      <td>${element['event_venue']}</td>
+      <td>${element['losing_team']} VS ${element['winning_team']}</td>
+      <td>${element['winning_team']}</td>
+      </tr>`;
+      table.innerHTML += row;
+    }
   } catch (error) {
     console.error(error);
   }
