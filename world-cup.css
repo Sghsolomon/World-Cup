@@ -2,6 +2,10 @@
   background-color: #8a1538;
   color: white;
   padding: 12px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .nav-link {
@@ -29,6 +33,7 @@ table {
 body {
   height: 100vh;
   width: 100vw;
+  margin-top: 155px;
 }
 
 .flags {
@@ -48,4 +53,9 @@ h3 {
 
 h3.float-right {
   margin-left: 400px;
+}
+
+tr :hover {
+  background-color: #ffff99;
+  color: purple;
 }
