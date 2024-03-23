@@ -28,9 +28,9 @@ async function buildTable() {
       <td>${element['event_year']}</td>
       <td>${element['event_locaiton']}</td>
       <td>${element['event_venue']}</td>
-      <td>${element['losing_team']} ${element['final_score'].charAt(4)} - ${
+      <td>${element['losing_team']} (${element['final_score'].charAt(4)}) - ${
         element['winning_team']
-      } ${element['final_score'].charAt(0)}</td>
+      } (${element['final_score'].charAt(0)})</td>
       <td>${element['winning_team']}</td>
       </tr>`;
       table.innerHTML += row;
