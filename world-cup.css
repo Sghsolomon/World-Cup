@@ -47,6 +47,13 @@ body {
   background-size: cover;
 }
 
+#roundsPage {
+  background-image: url('images/image1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 h3 {
   display: inline;
 }

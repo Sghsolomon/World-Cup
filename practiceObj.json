@@ -1,4 +1,173 @@
-"id": 391938,
+
+
+// API calls:
+// https://api.football-data.org/v4/competitions/WC/matches/?stage=FINALS
+// https://api.football-data.org/v4/competitions/WC/matches/?stage=SEMI_FINALS
+// https://api.football-data.org/v4/competitions/WC/matches/?stage=QUARTER_FINALS
+
+let matches = data.matches;
+// loop through matches and assign values to html classes
+
+for (let i = 0; i < matches.length i++){
+    let homeName = document.querySelector('.homeName' + i)
+    homeName.textContent =  matches[i]homeTeam.name
+
+    let homeScore = document.querySelector('.homeScore' + i)
+    homeScore.textContent = matches[i]score.fullTime.home
+
+    let awayName = document.querySelector('.awayName' + i)
+    awayName.textContent =  matches[i]awayTeam.name
+
+    let awayScore = document.querySelector('.awayScore' + i)
+    awayScore.textContent = matches[i]score.fullTime.away
+    
+}
+// object retreived from postman call:
+{
+    "filters": {
+        "season": "2022",
+        "stage": [
+            "QUARTER_FINALS"
+        ]
+    },
+    "resultSet": {
+        "count": 4,
+        "first": "2022-12-09",
+        "last": "2022-12-10",
+        "played": 4
+    },
+    "competition": {
+        "id": 2000,
+        "name": "FIFA World Cup",
+        "code": "WC",
+        "type": "CUP",
+        "emblem": "https://crests.football-data.org/qatar.png"
+    },
+    "matches": [
+        {
+            "area": {
+                "id": 2267,
+                "name": "World",
+                "code": "INT",
+                "flag": null
+            },
+            "competition": {
+                "id": 2000,
+                "name": "FIFA World Cup",
+                "code": "WC",
+                "type": "CUP",
+                "emblem": "https://crests.football-data.org/qatar.png"
+            },
+            "season": {
+                "id": 1382,
+                "startDate": "2022-11-20",
+                "endDate": "2022-12-18",
+                "currentMatchday": 8,
+                "winner": {
+                    "id": 762,
+                    "name": "Argentina",
+                    "shortName": "Argentina",
+                    "tla": "ARG",
+                    "crest": "https://crests.football-data.org/762.png",
+                    "address": "Viamonte 1366/76 Buenos Aires, Buenos Aires 1053",
+                    "website": "http://www.afa.org.ar",
+                    "founded": 1893,
+                    "clubColors": "Sky Blue / White / Black",
+                    "venue": null,
+                    "lastUpdated": "2022-05-17T21:09:25Z"
+                }
+            },
+            "id": 391937,
+            "utcDate": "2022-12-09T15:00:00Z",
+            "status": "FINISHED",
+            "matchday": 5,
+            "stage": "QUARTER_FINALS",
+            "group": null,
+            "lastUpdated": "2023-08-31T15:20:01Z",
+            "homeTeam": {
+                "id": 799,
+                "name": "Croatia",
+                "shortName": "Croatia",
+                "tla": "CRO",
+                "crest": "https://crests.football-data.org/799.svg"
+            },
+            "awayTeam": {
+                "id": 764,
+                "name": "Brazil",
+                "shortName": "Brazil",
+                "tla": "BRA",
+                "crest": "https://crests.football-data.org/764.svg"
+            },
+            "score": {
+                "winner": "HOME_TEAM",
+                "duration": "PENALTY_SHOOTOUT",
+                "fullTime": {
+                    "home": 5,
+                    "away": 3
+                },
+                "halfTime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "regularTime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "extraTime": {
+                    "home": 1,
+                    "away": 1
+                },
+                "penalties": {
+                    "home": 4,
+                    "away": 2
+                }
+            },
+            "odds": {
+                "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+            },
+            "referees": [
+                {
+                    "id": 11605,
+                    "name": "Michael Oliver",
+                    "type": "REFEREE",
+                    "nationality": "England"
+                }
+            ]
+        },
+        {
+            "area": {
+                "id": 2267,
+                "name": "World",
+                "code": "INT",
+                "flag": null
+            },
+            "competition": {
+                "id": 2000,
+                "name": "FIFA World Cup",
+                "code": "WC",
+                "type": "CUP",
+                "emblem": "https://crests.football-data.org/qatar.png"
+            },
+            "season": {
+                "id": 1382,
+                "startDate": "2022-11-20",
+                "endDate": "2022-12-18",
+                "currentMatchday": 8,
+                "winner": {
+                    "id": 762,
+                    "name": "Argentina",
+                    "shortName": "Argentina",
+                    "tla": "ARG",
+                    "crest": "https://crests.football-data.org/762.png",
+                    "address": "Viamonte 1366/76 Buenos Aires, Buenos Aires 1053",
+                    "website": "http://www.afa.org.ar",
+                    "founded": 1893,
+                    "clubColors": "Sky Blue / White / Black",
+                    "venue": null,
+                    "lastUpdated": "2022-05-17T21:09:25Z"
+                }
+            },
+            "id": 391938,
             "utcDate": "2022-12-09T19:00:00Z",
             "status": "FINISHED",
             "matchday": 5,
@@ -208,330 +377,6 @@
                     "name": "Wilton Sampaio",
                     "type": "REFEREE",
                     "nationality": "Brazil"
-                }
-            ]
-        },
-        {
-            "area": {
-                "id": 2267,
-                "name": "World",
-                "code": "INT",
-                "flag": null
-            },
-            "competition": {
-                "id": 2000,
-                "name": "FIFA World Cup",
-                "code": "WC",
-                "type": "CUP",
-                "emblem": "https://crests.football-data.org/qatar.png"
-            },
-            "season": {
-                "id": 1382,
-                "startDate": "2022-11-20",
-                "endDate": "2022-12-18",
-                "currentMatchday": 8,
-                "winner": {
-                    "id": 762,
-                    "name": "Argentina",
-                    "shortName": "Argentina",
-                    "tla": "ARG",
-                    "crest": "https://crests.football-data.org/762.png",
-                    "address": "Viamonte 1366/76 Buenos Aires, Buenos Aires 1053",
-                    "website": "http://www.afa.org.ar",
-                    "founded": 1893,
-                    "clubColors": "Sky Blue / White / Black",
-                    "venue": null,
-                    "lastUpdated": "2022-05-17T21:09:25Z"
-                }
-            },
-            "id": 391941,
-            "utcDate": "2022-12-13T19:00:00Z",
-            "status": "FINISHED",
-            "matchday": 6,
-            "stage": "SEMI_FINALS",
-            "group": null,
-            "lastUpdated": "2023-08-31T15:20:01Z",
-            "homeTeam": {
-                "id": 762,
-                "name": "Argentina",
-                "shortName": "Argentina",
-                "tla": "ARG",
-                "crest": "https://crests.football-data.org/762.png"
-            },
-            "awayTeam": {
-                "id": 799,
-                "name": "Croatia",
-                "shortName": "Croatia",
-                "tla": "CRO",
-                "crest": "https://crests.football-data.org/799.svg"
-            },
-            "score": {
-                "winner": "HOME_TEAM",
-                "duration": "REGULAR",
-                "fullTime": {
-                    "home": 3,
-                    "away": 0
-                },
-                "halfTime": {
-                    "home": 2,
-                    "away": 0
-                }
-            },
-            "odds": {
-                "msg": "Activate Odds-Package in User-Panel to retrieve odds."
-            },
-            "referees": [
-                {
-                    "id": 11116,
-                    "name": "Daniele Orsato",
-                    "type": "REFEREE",
-                    "nationality": "Italy"
-                }
-            ]
-        },
-        {
-            "area": {
-                "id": 2267,
-                "name": "World",
-                "code": "INT",
-                "flag": null
-            },
-            "competition": {
-                "id": 2000,
-                "name": "FIFA World Cup",
-                "code": "WC",
-                "type": "CUP",
-                "emblem": "https://crests.football-data.org/qatar.png"
-            },
-            "season": {
-                "id": 1382,
-                "startDate": "2022-11-20",
-                "endDate": "2022-12-18",
-                "currentMatchday": 8,
-                "winner": {
-                    "id": 762,
-                    "name": "Argentina",
-                    "shortName": "Argentina",
-                    "tla": "ARG",
-                    "crest": "https://crests.football-data.org/762.png",
-                    "address": "Viamonte 1366/76 Buenos Aires, Buenos Aires 1053",
-                    "website": "http://www.afa.org.ar",
-                    "founded": 1893,
-                    "clubColors": "Sky Blue / White / Black",
-                    "venue": null,
-                    "lastUpdated": "2022-05-17T21:09:25Z"
-                }
-            },
-            "id": 391942,
-            "utcDate": "2022-12-14T19:00:00Z",
-            "status": "FINISHED",
-            "matchday": 6,
-            "stage": "SEMI_FINALS",
-            "group": null,
-            "lastUpdated": "2023-08-31T15:20:01Z",
-            "homeTeam": {
-                "id": 773,
-                "name": "France",
-                "shortName": "France",
-                "tla": "FRA",
-                "crest": "https://crests.football-data.org/773.svg"
-            },
-            "awayTeam": {
-                "id": 815,
-                "name": "Morocco",
-                "shortName": "Morocco",
-                "tla": "MAR",
-                "crest": "https://crests.football-data.org/morocco.svg"
-            },
-            "score": {
-                "winner": "HOME_TEAM",
-                "duration": "REGULAR",
-                "fullTime": {
-                    "home": 2,
-                    "away": 0
-                },
-                "halfTime": {
-                    "home": 1,
-                    "away": 0
-                }
-            },
-            "odds": {
-                "msg": "Activate Odds-Package in User-Panel to retrieve odds."
-            },
-            "referees": [
-                {
-                    "id": 56007,
-                    "name": "César Ramos",
-                    "type": "REFEREE",
-                    "nationality": "Mexico"
-                }
-            ]
-        },
-        {
-            "area": {
-                "id": 2267,
-                "name": "World",
-                "code": "INT",
-                "flag": null
-            },
-            "competition": {
-                "id": 2000,
-                "name": "FIFA World Cup",
-                "code": "WC",
-                "type": "CUP",
-                "emblem": "https://crests.football-data.org/qatar.png"
-            },
-            "season": {
-                "id": 1382,
-                "startDate": "2022-11-20",
-                "endDate": "2022-12-18",
-                "currentMatchday": 8,
-                "winner": {
-                    "id": 762,
-                    "name": "Argentina",
-                    "shortName": "Argentina",
-                    "tla": "ARG",
-                    "crest": "https://crests.football-data.org/762.png",
-                    "address": "Viamonte 1366/76 Buenos Aires, Buenos Aires 1053",
-                    "website": "http://www.afa.org.ar",
-                    "founded": 1893,
-                    "clubColors": "Sky Blue / White / Black",
-                    "venue": null,
-                    "lastUpdated": "2022-05-17T21:09:25Z"
-                }
-            },
-            "id": 391943,
-            "utcDate": "2022-12-17T15:00:00Z",
-            "status": "FINISHED",
-            "matchday": 7,
-            "stage": "THIRD_PLACE",
-            "group": null,
-            "lastUpdated": "2023-08-31T15:20:01Z",
-            "homeTeam": {
-                "id": 799,
-                "name": "Croatia",
-                "shortName": "Croatia",
-                "tla": "CRO",
-                "crest": "https://crests.football-data.org/799.svg"
-            },
-            "awayTeam": {
-                "id": 815,
-                "name": "Morocco",
-                "shortName": "Morocco",
-                "tla": "MAR",
-                "crest": "https://crests.football-data.org/morocco.svg"
-            },
-            "score": {
-                "winner": "HOME_TEAM",
-                "duration": "REGULAR",
-                "fullTime": {
-                    "home": 2,
-                    "away": 1
-                },
-                "halfTime": {
-                    "home": 2,
-                    "away": 1
-                }
-            },
-            "odds": {
-                "msg": "Activate Odds-Package in User-Panel to retrieve odds."
-            },
-            "referees": [
-                {
-                    "id": 56026,
-                    "name": "Abdelrahman Al Jassim",
-                    "type": "REFEREE",
-                    "nationality": "Qatar"
-                }
-            ]
-        },
-        {
-            "area": {
-                "id": 2267,
-                "name": "World",
-                "code": "INT",
-                "flag": null
-            },
-            "competition": {
-                "id": 2000,
-                "name": "FIFA World Cup",
-                "code": "WC",
-                "type": "CUP",
-                "emblem": "https://crests.football-data.org/qatar.png"
-            },
-            "season": {
-                "id": 1382,
-                "startDate": "2022-11-20",
-                "endDate": "2022-12-18",
-                "currentMatchday": 8,
-                "winner": {
-                    "id": 762,
-                    "name": "Argentina",
-                    "shortName": "Argentina",
-                    "tla": "ARG",
-                    "crest": "https://crests.football-data.org/762.png",
-                    "address": "Viamonte 1366/76 Buenos Aires, Buenos Aires 1053",
-                    "website": "http://www.afa.org.ar",
-                    "founded": 1893,
-                    "clubColors": "Sky Blue / White / Black",
-                    "venue": null,
-                    "lastUpdated": "2022-05-17T21:09:25Z"
-                }
-            },
-            "id": 391944,
-            "utcDate": "2022-12-18T15:00:00Z",
-            "status": "FINISHED",
-            "matchday": 8,
-            "stage": "FINAL",
-            "group": null,
-            "lastUpdated": "2023-08-31T15:20:01Z",
-            "homeTeam": {
-                "id": 762,
-                "name": "Argentina",
-                "shortName": "Argentina",
-                "tla": "ARG",
-                "crest": "https://crests.football-data.org/762.png"
-            },
-            "awayTeam": {
-                "id": 773,
-                "name": "France",
-                "shortName": "France",
-                "tla": "FRA",
-                "crest": "https://crests.football-data.org/773.svg"
-            },
-            "score": {
-                "winner": "HOME_TEAM",
-                "duration": "PENALTY_SHOOTOUT",
-                "fullTime": {
-                    "home": 7,
-                    "away": 5
-                },
-                "halfTime": {
-                    "home": 2,
-                    "away": 0
-                },
-                "regularTime": {
-                    "home": 2,
-                    "away": 2
-                },
-                "extraTime": {
-                    "home": 1,
-                    "away": 1
-                },
-                "penalties": {
-                    "home": 4,
-                    "away": 2
-                }
-            },
-            "odds": {
-                "msg": "Activate Odds-Package in User-Panel to retrieve odds."
-            },
-            "referees": [
-                {
-                    "id": 43888,
-                    "name": "Szymon Marciniak",
-                    "type": "REFEREE",
-                    "nationality": "Poland"
                 }
             ]
         }

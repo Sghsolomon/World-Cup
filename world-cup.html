@@ -9,20 +9,27 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./world-cup.css" />
     <title>World Cup</title>
   </head>
-  <body>
+  <body id="roundsPage">
     <!--Header-->
     <header>
       <div id="header" class="col-12">
         
         <div class="row">
-            <h3 class="col-6">2014 - 2022 WORLD CUP</h3>
-            <h3 class="col-6 align-self-end">SELECT YEAR FOR MORE INFORMATION</h3>
+            <h3 class="col-6">WORLD CUP</h3>
         </div>
          <div class="row"> 
-            <div class="col-6"><a href="main.html" active>Home</a></div>
+            <div class="col-6">
+              <button class="btn btn-primary">
+              <a href="main.html"><i class="bi bi-house-fill active px-2" style="color: black;" ></i></a>
+             </button>
+            </div>
             <div class="col-6">
                 <div class="dropdown ">
                     <button
@@ -35,12 +42,12 @@
                         WORLD-CUP YEAR
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li>
+                        <!-- <li>
                             <a class="dropdown-item" href="world-cup.html">2014</a>
                         </li>
                         <li>
                         <a class="dropdown-item" href="world-cup.html">2018</a>
-                        </li>
+                        </li> -->
                         <li>
                         <a class="dropdown-item" href="world-cup.html">2022</a>
                         </li>
@@ -55,7 +62,7 @@
       <div class="row">
         <div class="dropdown col-6">
             <button
-              class="btn btn-caution dropdown-toggle"
+              class="btn btn-dark dropdown-toggle"
               type="button"
               id="dropdownMenuButton2"
               data-bs-toggle="dropdown"
@@ -69,8 +76,6 @@
               <li class="dropdown-item" id="quarters">QuarterFinals</li>
             </ul>
           </div> 
-
-          <p class="col-6"> Click the team flag for player roster</p>
       </div>
 
       <div class="container p-3 ms-1">
@@ -95,21 +100,21 @@
           </table>
         </div>
 
-      <div class="row semi-finals" id='semisTable' style="display: none">
+      <div class="row mb-2 semi-finals" id='semisTable' style="display: none">
         <table class="col-8 p-3 border border-end-0" >
           <thead>
               <th scope="col">Semi Final</th>
           </thead>
           <tbody>
-            <tr class='container'>
-              <td class="col-2"><a href="players.html"><img class='flags' src="images/Flag_of_Italy_.png" alt="flag"></a></td>
-              <td class="col-2">Team Country</td>
-              <td class="col-1">score</td>
+            <tr >
+              <td class=""><a href="players.html"><img class='flags' src="images/Flag_of_Italy_.png" alt="flag"></a></td>
+              <td class="">Team Country</td>
+              <td class="">score</td>
             </tr>
-            <tr class='container'>
-              <th class="col-2" scope="col">Team Flag</th>
-              <td class="col-2">Team Country</td>
-              <td class="col-1 align-self-end">score</td>
+            <tr >
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
             </tr>
           </tbody>
         </table>
@@ -158,32 +163,14 @@
           </thead>
           <tbody>
             <tr>
-              <th class="col-1" scope="col">Team Flag</th>
-              <td class="col-2">Team Country</td>
-              <td class="col-2 text-end">score</td>
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
             </tr>
             <tr>
-              <th class="col-3" scope="col">Team Flag</th>
-              <td class="col-3">Team Country</td>
-              <td class="col-2 text-end">score</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="col-6 p-3 border border-end-0"  >
-          <thead>
-              <th scope="col">Quarter Final</th>
-          </thead>
-          <tbody>
-            <tr>
-              <th class="col-1" scope="col">Team Flag</th>
-              <td class="col-2">Team Country</td>
-              <td class="col-2 text-end">score</td>
-            </tr>
-            <tr>
-              <th class="col-3" scope="col">Team Flag</th>
-              <td class="col-3">Team Country</td>
-              <td class="col-2 text-end">score</td>
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
             </tr>
           </tbody>
         </table>
@@ -194,14 +181,32 @@
           </thead>
           <tbody>
             <tr>
-              <th class="col-1" scope="col">Team Flag</th>
-              <td class="col-2">Team Country</td>
-              <td class="col-2 text-end">score</td>
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
             </tr>
             <tr>
-              <th class="col-3" scope="col">Team Flag</th>
-              <td class="col-3">Team Country</td>
-              <td class="col-2 text-end">score</td>
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="col-6 p-3 border border-end-0"  >
+          <thead>
+              <th scope="col">Quarter Final</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
+            </tr>
+            <tr>
+              <th class="" scope="col">Team Flag</th>
+              <td class="">Team Country</td>
+              <td class="">score</td>
             </tr>
           </tbody>
         </table>
