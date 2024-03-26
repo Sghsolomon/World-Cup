@@ -1,0 +1,16 @@
+{
+  "name": "world-cup",
+  "version": "1.0.0",
+  "description": "WORLD-CUP",
+  "source": "main.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel --open"
+  },
+  "keywords": [],
+  "author": "Madison and Solomon",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

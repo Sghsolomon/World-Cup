@@ -1,19 +1,20 @@
-let roundSelector = document.querySelector('#roundDropdown');
+//let roundSelector = document.querySelector('#roundDropdown');
 
-roundSelector.addEventListener('click', showSection);
+// roundSelector.addEventListener('click', showSection);
 
-function showSection(e) {
-  let round = e.target.id;
-  let table = document.querySelector(`#${round}Table`);
-  table.style.display = 'block';
-}
+// function showSection(e) {
+//   let round = e.target.id;
+//   let table = document.querySelector(`#${round}Table`);
+//   table.style.display = 'block';
+// }
 
 async function buildTable() {
+  console.log('working');
   const url = 'https://fifa-data.p.rapidapi.com/FifaWorldCupFinals';
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '6e02c900a5mshc0506a40ea670bbp156b17jsn3411a2d02051',
+      'X-RapidAPI-Key': process.env.WC_API_KEY,
       'X-RapidAPI-Host': 'fifa-data.p.rapidapi.com',
     },
   };
@@ -38,4 +39,7 @@ async function buildTable() {
   } catch (error) {
     console.error(error);
   }
+  console.log('finish');
 }
+
+buildTable();
