@@ -1,4 +1,4 @@
-//let roundSelector = document.querySelector('#roundDropdown');
+// let roundSelector = document.querySelector('#roundDropdown');
 
 // roundSelector.addEventListener('click', showSection);
 
@@ -9,7 +9,6 @@
 // }
 
 async function buildTable() {
-  console.log('working');
   const url = 'https://fifa-data.p.rapidapi.com/FifaWorldCupFinals';
   const options = {
     method: 'GET',
@@ -39,7 +38,6 @@ async function buildTable() {
   } catch (error) {
     console.error(error);
   }
-  console.log('finish');
 }
 
 buildTable();

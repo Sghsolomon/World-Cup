@@ -8,7 +8,7 @@
     "start": "parcel --open"
   },
   "keywords": [],
-  "author": "Madison and Solomon",
+  "author": "Solomon Madison",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.12.0"
