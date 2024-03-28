@@ -56,15 +56,17 @@
     <main id="main" class="col-12">
       <div class="row justify-content-center">
         <div class="col-11">
-          <table class="table table-striped">
+          <table id="table2022" class="table table-striped">
             <tr>
               <th scope="row">20 November 2022</th>
               <td></td>
               <td></td>
+              <th>NS</th>
+              <td></td>
               <td></td>
               <td></td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td class="col-4">Jacob</td>
               <td class="col-1">solomon</td>
               <td class="col-1">vs</td>
@@ -78,13 +80,13 @@
               <td>the Bird</td>
               <td>@twitter</td>
               <td>@twitter</td>
-            </tr>
+            </tr> -->
             </tbody>
           </table>
         </div>
       </div>
     </main>
-
+      <div id="flag"></div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -94,6 +96,11 @@
       async function queryApi() {
         const yearDiv = document.querySelector('#wc-year');
         const emblemDiv = document.querySelector('#emblem');
+        let myTable = document.querySelector("#table2022")
+          let image = document.createElement('img');
+          image.style.width = 50 + 'px';
+          image.style.height = 50 + 'px';
+          
 
         const url =
           'https://api.football-data.org/v4/competitions/WC/matches/?season=2022';
@@ -107,7 +114,26 @@
         try {
           const res = await fetch(url, options);
           const data = await res.json();
-          console.log(data);
+          let elements = data.matches
+          console.log(elements);
+          
+          let flag = elements[0].homeTeam.crest
+          image.src = flag
+          document.querySelector('#flag').appendChild(image)
+          for(let element of elements){
+            image.src = element.homeTeam['crest']
+            console.log(image)
+            let row = `<tr>
+              <td class="col-4">${element.group}</td>
+              <td class="col-1">${element.homeTeam['name']}</td>
+              <td class="col-1"><img src= ${element.homeTeam['crest']} alt="" border=3 height=30 width=30></img></td>
+              <td class="col-1">${element.utcDate.slice(11, 16)}</td>
+              <td class="col-1"><img src= ${element.awayTeam['crest']} alt="" border=3 height=30 width=30></img></td>
+              <td class="col-4">${element.awayTeam['name']}</td>
+              <td class="col-1">Details</td>
+              </tr>`
+              myTable.innerHTML += row;
+          }
           //let year = document.createElement('h3');
           // year.textContent = data.filters.season;
           //yearDiv.appendChild(year);
