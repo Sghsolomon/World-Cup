@@ -13,7 +13,7 @@ async function buildTable() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': process.env.WC_API_KEY,
+      'X-RapidAPI-Key': '6e02c900a5mshc0506a40ea670bbp156b17jsn3411a2d02051',
       'X-RapidAPI-Host': 'fifa-data.p.rapidapi.com',
     },
   };
