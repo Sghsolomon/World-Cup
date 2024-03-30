@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./world-cup.css" />
     <title>World Cup</title>
   </head>
-  <body>
+  <body id="wc2022">
     <!--Header-->
     <header>
       <div id="header" class="col-12">
@@ -35,7 +35,6 @@
             <span id="wc-description"><h3>WORLD-CUP</h3></span>
             <span id="wc-year" class="d-none d-lg-inline m-2"></span> -->
           </div>
-          
         </div>
         <div class="row">
           <div class="col-5">
@@ -44,20 +43,17 @@
               ><a href="main.html" class="link-dark h5" active>Home</a>
             </button>
           </div>
-          <div class="col-7 ">
-            
-              <h1 class="">GROUP STAGE</h1>
-            
+          <div class="col-7">
+            <h1 class="">GROUP STAGE</h1>
           </div>
         </div>
       </div>
     </header>
     <!--Main-->
-    <main id="main" class="col-12">
-      <div class="row justify-content-center">
-        <div class="col-11">
-          <table id="table2022" class="table table-striped">
-            <tr>
+    <main id="main" class="container">
+      <div id="table2022" class="col-12">
+        <!--<table id="table2022" class="table table-striped ">
+             <tr>
               <th scope="row">20 November 2022</th>
               <td></td>
               <td></td>
@@ -65,8 +61,8 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
-            <!-- <tr>
+            </tr> -->
+        <!-- <tr>
               <td class="col-4">Jacob</td>
               <td class="col-1">solomon</td>
               <td class="col-1">vs</td>
@@ -80,13 +76,12 @@
               <td>the Bird</td>
               <td>@twitter</td>
               <td>@twitter</td>
-            </tr> -->
+            </tr>
             </tbody>
-          </table>
-        </div>
+          </table>-->
       </div>
     </main>
-      <div id="flag"></div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -96,11 +91,11 @@
       async function queryApi() {
         const yearDiv = document.querySelector('#wc-year');
         const emblemDiv = document.querySelector('#emblem');
-        let myTable = document.querySelector("#table2022")
-          let image = document.createElement('img');
-          image.style.width = 50 + 'px';
-          image.style.height = 50 + 'px';
-          
+        let myTable = document.querySelector('#table2022');
+        let table = null;
+        let image = document.createElement('img');
+        image.style.width = 50 + 'px';
+        image.style.height = 50 + 'px';
 
         const url =
           'https://api.football-data.org/v4/competitions/WC/matches/?season=2022';
@@ -114,25 +109,61 @@
         try {
           const res = await fetch(url, options);
           const data = await res.json();
-          let elements = data.matches
+          let elements = data.matches;
+
           console.log(elements);
-          
-          let flag = elements[0].homeTeam.crest
-          image.src = flag
-          document.querySelector('#flag').appendChild(image)
-          for(let element of elements){
-            image.src = element.homeTeam['crest']
-            console.log(image)
-            let row = `<tr>
-              <td class="col-4">${element.group}</td>
-              <td class="col-1">${element.homeTeam['name']}</td>
-              <td class="col-1"><img src= ${element.homeTeam['crest']} alt="" border=3 height=30 width=30></img></td>
-              <td class="col-1">${element.utcDate.slice(11, 16)}</td>
-              <td class="col-1"><img src= ${element.awayTeam['crest']} alt="" border=3 height=30 width=30></img></td>
-              <td class="col-4">${element.awayTeam['name']}</td>
-              <td class="col-1">Details</td>
-              </tr>`
-              myTable.innerHTML += row;
+
+          for (let element in elements) {
+            image.src = elements[element].homeTeam['crest'];
+            // console.log(element, elements[element])
+            divTable = document.createElement('div');
+            divTable.className = `row mb-4`;
+
+            divTable.id = element;
+
+            table = `
+              <table class= 'bg-white'>
+                <tr>
+              <td></td>
+              <td></td>
+              <td class = 'table-primary text-center bg-success rounded'>${elements[
+                element
+              ].utcDate.slice(0, 10)}</td>
+              <td></td>
+              <td></td>
+              </tr>
+                <tr>
+               <td class="col-1"><img src= ${
+                 elements[element].homeTeam['crest']
+               } alt="" border=3 height=30 width=30></img></td>
+               <td class="col-4 text-center">${
+                 elements[element].homeTeam['name']
+               }</td>
+               <th class="col-1 text-center bg-primary rounded">${elements[
+                 element
+               ].utcDate.slice(11, 16)}</th>
+               <td class="col-4 text-center">${
+                 elements[element].awayTeam['name']
+               }</td>
+               <td class="col-1"><img src= ${
+                 elements[element].awayTeam['crest']
+               } alt="team flag"  height=30 width=30></img></td>
+               </tr>
+               <tr>
+              <td class="col-1"></td>
+              <td class="col-4"></td>
+              <td class = 'col-2 text-center  bg-warning rounded '>${
+                elements[element].venue
+              }</td>
+              <td class="col-4"></td>
+              <td class="col-1"></td>
+              
+              </tr>
+                </table>
+             `;
+
+            divTable.innerHTML = table;
+            myTable.appendChild(divTable);
           }
           //let year = document.createElement('h3');
           // year.textContent = data.filters.season;
