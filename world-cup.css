@@ -19,6 +19,7 @@ table {
   border-collapse: separate;
   border-spacing: 1px 1px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 /* #finalsTable {
@@ -76,4 +77,32 @@ tr :hover {
 
 #wc2022 {
   background: radial-gradient(#bb3f64, #420819);
+}
+
+.popup {
+  width: 400px;
+  background-color: #224424;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.01);
+  text-align: center;
+  padding: 0 20px 20px 30px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 44%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#x {
+  position: absolute;
+  background: red;
+  color: white;
+  top: 0px;
+  right: 0px;
 }

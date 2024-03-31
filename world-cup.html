@@ -80,6 +80,10 @@
             </tbody>
           </table>-->
       </div>
+      <div class="popup" id="popup" class="container">
+        <button id="x" type="button" onclick="closeDiv()">X</button>
+        <div id="tableDiv" class="ms-5 ps-4"></div>
+      </div>
     </main>
 
     <script
@@ -88,6 +92,8 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      let elements = null;
+
       async function queryApi() {
         const yearDiv = document.querySelector('#wc-year');
         const emblemDiv = document.querySelector('#emblem');
@@ -109,29 +115,32 @@
         try {
           const res = await fetch(url, options);
           const data = await res.json();
-          let elements = data.matches;
+          elements = data.matches;
 
-          console.log(elements);
+          //console.log(elements);
 
           for (let element in elements) {
             image.src = elements[element].homeTeam['crest'];
-            // console.log(element, elements[element])
+            //console.log(element, elements[element]);
             divTable = document.createElement('div');
             divTable.className = `row mb-4`;
 
             divTable.id = element;
 
             table = `
-              <table class= 'bg-white'>
+              <table class= 'bg-white' border-collapse: separate;>
                 <tr>
               <td></td>
               <td></td>
               <td class = 'table-primary text-center bg-success rounded'>${elements[
                 element
-              ].utcDate.slice(0, 10)}</td>
+              ].utcDate.slice(0, 10)}-(${elements[element].utcDate.slice(
+              11,
+              16
+            )})</td>
               <td></td>
               <td></td>
-              </tr>
+              </tr >
                 <tr>
                <td class="col-1"><img src= ${
                  elements[element].homeTeam['crest']
@@ -139,9 +148,7 @@
                <td class="col-4 text-center">${
                  elements[element].homeTeam['name']
                }</td>
-               <th class="col-1 text-center bg-primary rounded">${elements[
-                 element
-               ].utcDate.slice(11, 16)}</th>
+               <td onClick = "tdClick('${element}')" id='tdDetail' class="col-1 text-center bg-primary rounded">Details</td>
                <td class="col-4 text-center">${
                  elements[element].awayTeam['name']
                }</td>
@@ -177,6 +184,45 @@
         } catch (error) {
           console.error(error.message);
         }
+      }
+
+      function tdClick(data) {
+        console.log('start');
+        //console.log(elements[data]);
+        const object = elements[data];
+        console.log(object);
+        let popup = document.querySelector('.popup');
+        popup.classList.add('open-popup');
+        let tableDiv = document.querySelector('#tableDiv');
+
+        let = table = `
+        <table class= 'bg-white' border-collapse: separate;>
+          <tbody>
+        <tr >
+          <td border-spacing: 10px;><img src= ${object.awayTeam['crest']} alt="team flag"  height=60 width=60></img></td>
+          <td border-spacing: 10px; >${object.awayTeam['name']}</td>
+          <td >${object.score.fullTime['away']}</td>
+          </tr>
+         <tr >
+          <td><img src= ${object.homeTeam['crest']} alt="team flag"  height=60 width=60></img></td>
+          <td>${object.homeTeam['name']}</td>
+          <td>${object.score.fullTime['home']}</td>
+          </tr>
+          </tbody>
+          </table>
+          `;
+        tableDiv.innerHTML = table;
+        popup.appendChild(tableDiv);
+
+        console.log('finish');
+      }
+
+      function closeDiv() {
+        let tableDiv = document.querySelector('#tableDiv');
+        let popup = document.querySelector('.popup');
+        console.log(popup);
+        while (tableDiv.firstChild) tableDiv.removeChild(tableDiv.firstChild);
+        popup.classList.remove('open-popup');
       }
 
       queryApi();
