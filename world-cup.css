@@ -1,11 +1,7 @@
 #header {
-  background-color: #8a1538;
+  background: radial-gradient(#bb3f64, #420819);
   color: white;
   padding: 12px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
 }
 
 .nav-link {
@@ -14,26 +10,27 @@
 
 table {
   position: relative;
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 0 50px 0 50px;
   border-collapse: separate;
+  border-spacing: 1px 1px;
+  border-radius: 20px;
 }
-#finalsTable {
+
+/* #finalsTable {
   background-color: rgb(228, 228, 228);
-}
+} */
 
-#semisTable {
+/* #semisTable {
   background-color: rgb(209, 209, 209);
-}
+} */
 
-#quartersTable {
+/* #quartersTable {
   background-color: rgb(180, 180, 180);
-}
-
+} */
 body {
   height: 100vh;
   width: 100vw;
-  margin-top: 155px;
 }
 
 .flags {
@@ -54,8 +51,27 @@ h3 {
 h3.float-right {
   margin-left: 400px;
 }
+<<<<<<< HEAD
 
 tr :hover {
   background-color: #ffff99;
   color: purple;
 }
+
+#wcTrophy {
+  background-color: #3f131f;
+  width: 150px;
+  height: 100px;
+}
+
+#main {
+  position: relative;
+  top: 75px;
+  width: 100%;
+}
+
+#wc2022 {
+  background: radial-gradient(#bb3f64, #420819);
+}
+=======
+>>>>>>> parent of c0a20db (Some changes on the css for world-cupHistory.html header)
