@@ -2,6 +2,10 @@
   background: radial-gradient(#bb3f64, #420819);
   color: white;
   padding: 12px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .nav-link {
@@ -15,6 +19,7 @@ table {
   border-collapse: separate;
   border-spacing: 1px 1px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 /* #finalsTable {
@@ -31,6 +36,7 @@ table {
 body {
   height: 100vh;
   width: 100vw;
+  margin-top: 120px;
 }
 
 .flags {
@@ -51,7 +57,6 @@ h3 {
 h3.float-right {
   margin-left: 400px;
 }
-<<<<<<< HEAD
 
 tr :hover {
   background-color: #ffff99;
@@ -73,5 +78,31 @@ tr :hover {
 #wc2022 {
   background: radial-gradient(#bb3f64, #420819);
 }
-=======
->>>>>>> parent of c0a20db (Some changes on the css for world-cupHistory.html header)
+
+.popup {
+  width: 400px;
+  background-color: #224424;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.01);
+  text-align: center;
+  padding: 0 20px 20px 30px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 44%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#x {
+  position: absolute;
+  background: #224424;
+  color: white;
+  top: 0px;
+  right: 0px;
+}
