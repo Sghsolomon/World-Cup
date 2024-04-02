@@ -1,4 +1,4 @@
-
+// Madison's tables
 const listItems = document.querySelectorAll(".listItem")
 for (let item of listItems){
     item.addEventListener('click', handleItemClick)
@@ -51,7 +51,6 @@ function updateTable (data, round){
             }
 }
 
-
 let local;
 async function queryApi (round){
 
@@ -99,6 +98,7 @@ async function queryApi (round){
     }
 }
 
+// Solomon's tables
 async function buildTable() {
   const url = 'https://fifa-data.p.rapidapi.com/FifaWorldCupFinals';
   const options = {
