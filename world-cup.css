@@ -22,9 +22,15 @@ table {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 /* #finalsTable {
   background-color: rgb(228, 228, 228);
 } */
+=======
+#finalsTable {
+  background-color: rgb(228, 228, 228);
+} 
+>>>>>>> origin/main
 
 /* #semisTable {
   background-color: rgb(209, 209, 209);
@@ -50,12 +56,24 @@ body {
   background-size: cover;
 }
 
+#roundsPage {
+  background-image: url('images/image1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 h3 {
   display: inline;
 }
 
 h3.float-right {
   margin-left: 400px;
+}
+
+.countryFlags{
+  height: 30px;
+  width: 30px;
 }
 
 tr :hover {
