@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./world-cup.css" />
+    <title>World Cup</title>
+  </head>
+  <body id="roundsPage">
+    <!--Header-->
+    <header>
+      <div id="header" class="col-12">
+        
+        <div class="row">
+            <h3 class="col-6">WORLD CUP</h3>
+        </div>
+         <div class="row"> 
+            <div class="col-6">
+              <button class="btn btn-primary">
+              <a href="main.html"><i class="bi bi-house-fill active px-2" style="color: black;" ></i></a>
+             </button>
+            </div>
+            <div class="col-6">
+                <div class="dropdown ">
+                    <button
+                        class="btn btn-primary dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        WORLD-CUP YEAR
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <!-- <li>
+                            <a class="dropdown-item" href="world-cup.html">2014</a>
+                        </li>
+                        <li>
+                        <a class="dropdown-item" href="world-cup.html">2018</a>
+                        </li> -->
+                        <li>
+                        <a class="dropdown-item" href="world-cup.html">2022</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+      </div>
+    </header>
+    <!--Main-->
+    <main class="container">
+      <div class="row">
+        <div class="dropdown col-6 ">
+            <button
+              class="btn btn-dark dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton2"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Round
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2"  id="roundDropdown">
+              <li class="dropdown-item listItem" id="finals">Finals</li>
+              <li class="dropdown-item listItem" id="semis">SemiFinals</li>
+              <li class="dropdown-item listItem" id="quarters">QuarterFinals</li>
+            </ul>
+          </div> 
+
+          <h5 class="col-6" style="color: white"> Choose a round of competition</h5>
+      </div>
+
+      <div class="container p-3 ms-1">
+
+        <div class="row mb-2 finals" id="finalsTable" style="display: none">
+          <table class="col p-3 border border-start-0">
+            <thead class="container">
+                <th>Final</th>
+            </thead>
+            <tbody class="container">
+              <tr class="row">
+                <th class="col-2 finalsHomeFlag0">Team Flag</th>
+                <td class="col finalshomeName0">Team Country</td>
+                <td class="col finalshomeScore0">score</td>
+              </tr>
+              <tr class="row">
+                <th class="col-2 finalsAwayFlag0">Team Flag</th>
+                <td class="col finalsawayName0">Team Country</td>
+                <td class="col finalsawayScore0">score</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      <div class="row mb-2 semi-finals" id='semisTable' style="display: none">
+        <table class="col-8 p-3 border border-end-0" >
+          <thead class="container">
+              <th>Semi Final</th>
+          </thead>
+          <tbody class='container'>
+            <tr class='row'>
+              <th class="col-2 semisHomeFlag0" scope="col">Team Flag</th>
+              <td class="col semishomeName0">Team Country</td>
+              <td class="col semishomeScore0">score</td>
+            </tr>
+            <tr class='row'>
+              <th class="col-2 semisAwayFlag0" scope="col">Team Flag</th>
+              <td class="col semisawayName0">Team Country</td>
+              <td class="col semisawayScore0">score</td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <table class="col-8 p-3 border border-end-0"  >
+          <thead class="container">
+              <th>Semi Final</th>
+          </thead>
+          <tbody class="container">
+            <tr class="row">
+              <th  class="col-2 semisHomeFlag1">Team Flag</th>
+              <td class="col semishomeName1">Team Country</td>
+              <td class="col semishomeScore1">score</td>
+            </tr>
+            <tr class="row">
+              <th class="col-2 semisAwayFlag1">Team Flag</th>
+              <td class="col semisawayName1">Team Country</td>
+              <td class="col semisawayScore1">score</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row quarter-finals" id='quartersTable' style="display: none">
+        <table class="col-6 p-3 border border-end-0" >
+          <thead class="container">
+              <th>Quarter Final</th>
+          </thead>
+          <tbody class="container">
+            <tr class="row">
+              <th class="col-2 quartersHomeFlag0" scope="col">Team Flag</th>
+              <td class="col quartershomeName0">Team Country</td>
+              <td class="col quartershomeScore0" >score</td>
+            </tr>
+            <tr class="row">
+              <th class="col-2 quartersAwayFlag0" scope="col">Team Flag</th>
+              <td class="col quartersawayName0">Team Country</td>
+              <td class="col quartersawayScore0">score</td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <table class="col-6 p-3 border border-end-0"  >
+          <thead class="container">
+              <th> Quarter Final</th>
+          </thead>
+          <tbody class="container">
+            <tr class="row"> 
+              <th class="col-2 quartersHomeFlag1" scope="col">Team Flag</th>
+              <td class="col quartershomeName1">Team Country</td>
+              <td class="col quartershomeScore1">score</td>
+            </tr>
+            <tr class="row">
+              <th class="col-2 quartersAwayFlag1" scope="col">Team Flag</th>
+              <td class="col quartersawayName1">Team Country</td>
+              <td class="col quartersawayScore1">score</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="col-6 p-3 border border-end-0"  >
+          <thead class="container">
+              <th>Quarter Final</th>
+          </thead>
+          <tbody>
+            <tr class="row">
+              <th class="col-2 quartersHomeFlag2" scope="col">Team Flag</th>
+              <td class="col quartershomeName2">Team Country</td>
+              <td class="col quartershomeScore2">score</td>
+            </tr>
+            <tr class="row">
+              <th class="col-2 quartersAwayFlag2" scope="col">Team Flag</th>
+              <td class="col quartersawayName2">Team Country</td>
+              <td class="col quartersawayScore2">score</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="col-6 p-3 border border-end-0"  >
+          <thead class="row">
+              <th>Quarter Final</th>
+          </thead>
+          <tbody class="container">
+            <tr class="row">
+              <th class="col-2 quartersHomeFlag3" scope="col">Team Flag</th>
+              <td class="col quartershomeName3">Team Country</td>
+              <td class="col quartershomeScore3">score</td>
+            </tr>
+            <tr class="row">
+              <th class="col-2 quartersAwayFlag3" scope="col">Team Flag</th>
+              <td class="col quartersawayName3">Team Country</td>
+              <td class="col quartersawayScore3">score</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script src="js/script.js"></script>
+    
+    <!--Footer-->
+  </body>
+</html>
+    
