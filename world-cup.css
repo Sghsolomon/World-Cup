@@ -22,23 +22,17 @@ table {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-/* #finalsTable {
-  background-color: rgb(228, 228, 228);
-} */
-=======
 #finalsTable {
   background-color: rgb(228, 228, 228);
-} 
->>>>>>> origin/main
+}
 
-/* #semisTable {
+#semisTable {
   background-color: rgb(209, 209, 209);
-} */
+}
 
-/* #quartersTable {
+#quartersTable {
   background-color: rgb(180, 180, 180);
-} */
+}
 body {
   height: 100vh;
   width: 100vw;
@@ -71,7 +65,7 @@ h3.float-right {
   margin-left: 400px;
 }
 
-.countryFlags{
+.countryFlags {
   height: 30px;
   width: 30px;
 }
