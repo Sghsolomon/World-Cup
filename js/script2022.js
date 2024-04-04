@@ -76,7 +76,7 @@ async function queryApi() {
       myTable.appendChild(divTable);
     }
   } catch (e) {
-    let localJson = await fetch('wc2022.json');
+    let localJson = await fetch('../wc2022.json');
     let localData = await localJson.json();
     elements = localData;
 
